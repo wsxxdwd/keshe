@@ -7,12 +7,28 @@
 			$this->load->helper(array('url','form'));
 			$this->load->model('user_model');
 		}
-
+		//默认加载
 		function index()
-		{
-			$this->load->view();
+		{	
+			$session = $this->session->all_userdata();
+
+			if(isset($session['userid']))
+			{
+				$data['session'] = $session;
+				$this->load->view('index',$data);
+			}
+			else if(isset($_COOKIE['userid']) && $this->user_model->getsession())
+			{
+				$data['session'] = $this->session->all_userdata();
+				$this->load->view('index',$data);
+			}
+			else
+			{
+				$this->load->view('login');
+			}
+
 		}
-		//
+		//登录
 		function do_login()
 		{
 			$post = $this->input->post();
@@ -34,7 +50,7 @@
 
 			echo json_encode($res);
 		}
-
+		//注销
 		function do_logout()
 		{
 			if($this->user_model->logout())

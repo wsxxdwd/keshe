@@ -8,9 +8,11 @@
 			$this->load->library('session');
 		}
 
+		//添加成员
 		function add($post)
 		{	
 			$post['password'] = md5($post['password']);
+			$post['security'] = md5(time().$post['username'].mt_rand(10001,99999));
 			if($this->db->insert('user',$post))
 			{
 				return TRUE;
@@ -18,6 +20,7 @@
 			else return FALSE;
 		}
 
+		//删除成员
 		function delete($post)
 		{	
 			if($this->db->delete('user',$post))
@@ -27,6 +30,7 @@
 			else return FALSE;
 		}
 
+		//更新成员信息
 		function update($post)
 		{	
 			if($post['password'])
@@ -36,5 +40,29 @@
 				return TURE;
 			}
 			else return FALSE;
+		}
+
+		//获取所有成员
+		function fetchAll()
+		{
+			$query = $this->db->get('user');
+			if($row = $query->result_array())
+			{
+				return $row;
+			} 
+			else return FALSE;
+		}
+
+		//搜索一个成员
+		function fetchOne($post)
+		{	
+			$this->db->like('name',$post['name'],'both');
+			$qurey = $this->db->get('user');
+			if($row = $query->result_array())
+			{
+				return $row;
+			}
+			else
+				return FALSE; 	
 		}
 	}

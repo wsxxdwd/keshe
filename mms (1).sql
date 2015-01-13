@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2015-01-12 13:44:45
+-- Generation Time: 2015-01-13 15:07:05
 -- 服务器版本： 5.6.17
 -- PHP Version: 5.5.12
 
@@ -31,7 +31,14 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `groupname` varchar(12) NOT NULL,
   `member_num` int(11) unsigned NOT NULL,
   PRIMARY KEY (`groupid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `groups`
+--
+
+INSERT INTO `groups` (`groupid`, `groupname`, `member_num`) VALUES
+(1, 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -67,6 +74,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `phone` int(11) unsigned NOT NULL COMMENT '电话',
   `qq` int(11) unsigned NOT NULL COMMENT 'qq',
   `status` int(2) unsigned NOT NULL COMMENT '状态',
+  `security` int(32) NOT NULL COMMENT '安全验证字段',
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表' AUTO_INCREMENT=1 ;
 

@@ -8,6 +8,7 @@
 			$this->load->model('members_model');
 		}
 
+		//添加新成员
 		function add_members()
 		{
 			$post = $this->input->post();
@@ -39,6 +40,8 @@
 			echo json_encode($result);
 		}
 
+
+		//删除成员
 		function delete_members()
 		{
 			$post = $this->input->post();
@@ -60,4 +63,28 @@
 			echo json_encode($result);
 		}
 
+		//更新成员信息
+		function update_members()
+		{
+			$session = $this->session->all_userdata();
+			$post = $this->input->post();
+			if($session['userid']==$post['userid'] OR $session['groupid']==1)
+			{
+				if($this->members_model->update($post))
+				{
+					$res['status'] = 1;
+					$res['msg'] = '修改成功';
+				}
+				else 
+				{
+					$res['status'] = 0;
+					$res['msg'] ='修改失败';
+				}
+			}
+			else
+			{
+				$res['status'] = 0;
+				$res['msg'] = '您无权进行此操作';
+			}
+		}
 	}
