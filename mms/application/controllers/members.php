@@ -87,4 +87,47 @@
 				$res['msg'] = '您无权进行此操作';
 			}
 		}
+		
+
+		//后台处理上传头像
+		function upload_avatar()
+		{	
+
+			$path = base_url().'/public/uploads';
+			if(!file_exists($path))
+			{
+				 mkdir($path, 0777);
+			}
+
+			$config['upload_path'] =$path.'/';
+			$config['allowed_types'] = 'png|gif|jpeg|jpg';
+			$config['max_size'] = '100';
+			$config['max_width'] ='1024';
+			$config['max_height'] = '768';
+			$config['encrypt_name'] = 'true';
+
+			$this->load->library('upload',$config);
+
+			if(!$this->upload->do_upload())
+			{	
+				$res['status'] = 0;
+				$res['msg'] = array('error' => $this->upload->display_errors()); 
+			}
+			else
+			{
+				$data['avatar'] = $this->upload->data('file_name');
+				$userid = $this->session->userdata('userid');
+				if($this->members_model->update($data))
+				{
+					$res['status'] = 1;
+					$res['msg'] = '上传成功';
+				}
+				else
+				{
+					$res['status'] = 0;
+					$res['msg'] = '上传失败';
+				}
+			}
+			echo json_encode($res);
+		}
 	}
