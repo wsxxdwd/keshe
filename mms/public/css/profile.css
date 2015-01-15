@@ -29,29 +29,115 @@ body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
+
+.search{
+	position: relative;
+	display: inline-block;
+	height:100%;
+	width:200px;
+	background:#444;
+	border-top-left-radius: 5px;
+/* 	border-top: 1px solid #000; */
+}
+#container .content{
+	position: relative;
+	height:25px;
+	width: 100%;
+	/* background: #fff; */
+	top: 18px;
+	
+
+}
+.fa{
+	position: relative;
+	display: inline-block;
+	color: #888;
+	margin-left: 20px;
+	font-size: 16px;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+}
+.fa+input{
+	background: none;
+	border-style: none;
+	font-size: 14px;
+}
+.info{
+	float:right;
+	display: inline-block;
+	height:100%;
+	width:200px;
+	
+}
+.info .head{
+	position: relative;
+	display: inline-block;
+	height:40px;
+	width: 40px;
+	background: url(../images/head.jpg);
+	margin:10px;
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+}
+.info .username{
+	position: relative;
+	display: inline-block;
+	height:100%;
+	width:100px;
+}
+.info .username .wel{
+	position: absolute;
+	margin-top: 10px;
+	font-family: microsoft yahei;
+	font-size:16px;
+	color:#fff;
+}
+.info .username .name{
+	position: absolute;
+	margin-top: 30px;
+	font-family: microsoft yahei;
+	font-size:16px;
+	color:#fff;
+	font-weight: 900;
+}
+
 #nav{
 	position: relative;
 	height:100%;
 	width:200px;
 	background:rgba(0, 0, 0, 0.5);
-	margin-top:-62px;
+	margin-top:-64px;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 }
-.search{
+#nav .sidebar{
 	position: relative;
-	height:100%;
-	width:200px;
-	background:#222;
-	border-top-left-radius: 5px;
-/* 	border-top: 1px solid #000; */
+	top: 100px;
 }
-.icon{
+#nav .nav_cell{
 	position: relative;
-	height:23px;
-	width:23px;
-	
-
+	height:24px;
+	width:118px;
+	margin:5px 20px 5px 20px;
+	padding:10px 30px 10px 12px;
+	border-radius: 8px;
+	background-color: #CE6339;
+	cursor: pointer;
+	font-size: 16px;
+	color: #fff;
+	font-family: microsoft yahei;
+}
+#nav .nav_cell:hover{
+	background-color: #db7c59;
+}
+/* .dashboard{
+	top: 60px;
+} */
+/* .fa-search:before{
+	content: "\f002";
+} */
 /* .left{
 	position: relative;
 	display: inline-block;
