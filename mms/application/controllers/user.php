@@ -24,7 +24,7 @@
 			}
 			else
 			{
-				$this->load->view('info_panel');
+				$this->load->view('login');
 			}
 
 		}
