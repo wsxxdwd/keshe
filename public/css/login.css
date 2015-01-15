@@ -1,0 +1,76 @@
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}  
+ ol{margin:0; padding:0;border:0;}
+#background{
+	position:absolute;
+	height:768px;
+	width:1366px;
+	background: url(../images/dj.png);
+	background-size: 1366px 768px;
+}
+#box{
+	position: absolute;
+	height:500px;
+	width:500px;
+	background-color: rgba(188,188,188,0.5);
+	margin-top: 200px;
+	left:50%;
+	margin-left: -200px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	box-shadow: 1px 1px 10px #666;
+	font-family: microsoft yahei;
+}
+#box .title{
+	position: relative;
+	line-height: 100px;
+	height:100px;
+	width:108px;
+	font-size: 27px;
+	margin:auto;
+	margin-top: 30px;
+}
+input.email{
+	position: relative;
+	height:40px;
+	width:400px;
+	background: #fff;
+	margin-left:50px;
+	margin-top: 30px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font-size: 18px;
+	font-family: microsoft yahei;
+	text-indent: 1em;
+}
+input.password{
+	position: relative;
+	height:40px;
+	width:400px;
+	background: #fff;
+	margin-left:50px;
+	margin-top: 30px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font-size: 18px;
+	font-family: microsoft yahei;
+	text-indent: 1em;
+}
+input.button{
+	position: relative;
+	height:40px;
+	width:400px;
+	background: #fff;
+	margin-left:50px;
+	margin-top: 50px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font-size: 18px;
+	font-family: microsoft yahei;
+	background: #3385ff;
+	border-style: none;
+	color:#fff;
+	cursor: pointer;
+}
+input.button:hover{
+	background: #317ef3;
+}
