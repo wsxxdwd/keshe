@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<base href = "<?php echo base_url();?>"/> 
 <link href="./public/css/login.css" rel="stylesheet" type="text/css" />
 <script src="./public/js/jquery-min.js"></script>
 <script src="./public/js/login.js" ></script>

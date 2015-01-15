@@ -24,14 +24,19 @@
 			}
 			else
 			{
-				$this->load->view('login');
+				$this->load->view('info_panel');
 			}
 
 		}
 		//登录
+		/*
+		*传入post参数 1 username
+		*参数2 password
+		*参数3 autoflag 自动登录
+		*/
 		function do_login()
 		{
-			$post = $this->input->post();
+			$post = $this->input->post();	
 			if($post['username']=='' OR $post['password']=='')
 			{
 				$res['status'] = 0;
@@ -51,6 +56,7 @@
 			echo json_encode($res);
 		}
 		//注销
+		//
 		function do_logout()
 		{
 			if($this->user_model->logout())
