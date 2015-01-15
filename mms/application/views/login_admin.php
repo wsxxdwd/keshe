@@ -10,6 +10,7 @@
 	<meta content="" name="description" />
 	<meta content="" name="author" />
 	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<base href = "<?php echo base_url();?>"/> 
 	<link href="media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 	<link href="media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
 	<link href="media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>

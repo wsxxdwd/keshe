@@ -9,6 +9,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="wsxxdwdd@gmail.com" name="author" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <base href = "<?php echo base_url();?>"/> 
     <link href="./media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="./media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
     <link href="./media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
