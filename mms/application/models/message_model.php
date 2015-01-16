@@ -11,6 +11,9 @@
 		function send($post)
 		{
 			//$data['s_id'] = $this->session->userdata('userid');
+
+			$data['s_ip'] = $this->session->userdata('ip_address');
+			$data['s_email'] = $post['s_email'];
 			$data['m_id'] = $post['m_id'];
 			$data['content'] = $post['content'];
 			$data['new'] = 1 ;
