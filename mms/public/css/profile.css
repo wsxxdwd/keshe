@@ -1,19 +1,32 @@
-body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}  
- ol{margin:0; padding:0;border:0;}
-#background{
-	position:absolute;
-	height:100%;
+*{
+	font-family: 'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Hiragino Sans GB W3','Microsoft YaHei UI','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html,body{
 	width:100%;
-	background: url(../images/profile.jpg);
-/* 	background-size: 1366px 768px; */
+	height:100%;
+	min-height: 700px;
+	margin: 0;
+	padding: 0;
+	background: url(../images/bg.jpg) no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+#background{
+	height:100%;
+	width: 100%;
+	overflow: hidden;
 }
 #container{
 	position: absolute;
-	height:80%;
 	width:80%;
+	min-width: 
+	height: 600px;
 	margin-left: 10%;
 	margin-top: 5%;
 	background:rgba(255, 255, 255, 0.2);
+	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	font-size: 0;
@@ -23,9 +36,10 @@ body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}
 	position: relative;
 	height:60px;
 	width:100%;
-	background: rgba(255, 165, 0, 0.5);
+	background: rgba(255, 255, 255, 0.1);
 /* 	border-top: 1px solid #a3702a; */
 	/* border-bottom: 1px solid #d8bd97; */
+	border-radius: 5px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
@@ -39,75 +53,42 @@ body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}
 	border-top-left-radius: 5px;
 /* 	border-top: 1px solid #000; */
 }
-#container .content{
-	position: relative;
-	height:25px;
-	width: 100%;
-	/* background: #fff; */
-	top: 18px;
-	
-
-}
-.fa{
-	position: relative;
-	display: inline-block;
-	color: #888;
-	margin-left: 20px;
-	font-size: 16px;
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-}
-.fa+input{
-	background: none;
-	border-style: none;
-	font-size: 14px;
-}
 .info{
 	float:right;
 	display: inline-block;
 	height:100%;
-	width:200px;
-	
 }
 .info .head{
-	position: relative;
-	display: inline-block;
+	float:right;
 	height:40px;
 	width: 40px;
-	background: url(../images/head.jpg);
 	margin:10px;
 	-moz-border-radius:20px;
 	-webkit-border-radius:20px;
+	border-radius: 20px;
 }
 .info .username{
 	position: relative;
-	display: inline-block;
+	float:right;
 	height:100%;
-	width:100px;
-}
-.info .username .wel{
-	position: absolute;
-	margin-top: 10px;
-	font-family: microsoft yahei;
-	font-size:16px;
-	color:#fff;
 }
 .info .username .name{
-	position: absolute;
-	margin-top: 30px;
-	font-family: microsoft yahei;
+	margin-top: 10px;
+	text-align: right;
+	font-size:18px;
+	color:rgba(255,255,255,0.8);;
+}
+.info .username .description{
 	font-size:16px;
-	color:#fff;
-	font-weight: 900;
+	text-align: right;
+	color:rgba(255,255,255,0.65);
 }
 
 #nav{
 	position: relative;
 	height:100%;
 	width:200px;
-	background:rgba(0, 0, 0, 0.5);
+	background:rgba(0, 0, 0, 0.2);
 	margin-top:-64px;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
@@ -119,15 +100,17 @@ body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}
 #nav .nav_cell{
 	position: relative;
 	height:24px;
+	line-height: 24px;
 	width:118px;
 	margin:5px 20px 5px 20px;
 	padding:10px 30px 10px 12px;
 	border-radius: 8px;
-	background-color: #CE6339;
 	cursor: pointer;
 	font-size: 16px;
 	color: #fff;
-	font-family: microsoft yahei;
+}
+#nav .active{
+	background-color: #CE6339;
 }
 #nav .nav_cell:hover{
 	background-color: #db7c59;

@@ -1,11 +1,23 @@
-body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}  
- ol{margin:0; padding:0;border:0;}
-
+*{
+	font-family: 'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Hiragino Sans GB W3','Microsoft YaHei UI','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html,body{
+	width:100%;
+	height:100%;
+	min-height: 700px;
+	margin: 0;
+	padding: 0;
+	background: url(../images/bg.jpg) no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
 .box{
 	position: relative;
 	display: inline-block;
 	margin: 2em;
-	padding: 1em 0 0.5em;
+	padding: 10px 0 10px;
 	border: 1px solid rgba(0, 0, 0, 0.6);
 	border-radius: 5px;
 	background-color: rgb(51, 51, 83);
@@ -14,12 +26,11 @@ body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}
 	vertical-align: middle;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 	font-family: 'Raleway', sans-serif;
-	height:520px;
-	width:220px;
+	width:200px;
 }
 .top{
 	position: relative;
-	height:265px;
+	height:235px;
 	width:100%;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.6);
 }
@@ -28,7 +39,7 @@ body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}
 	height:175px;
 	width:175px;
 	background: rgb(45,44,62);
-	margin:21px;
+	margin:12.5px;
 	-webkit-border-radius:87.5px;
 	-moz-border-radius:87.5px;
 	box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2), 0 0 8px 
@@ -36,20 +47,18 @@ body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}
 }
 .head{
 	position: relative;
-	height: 150px;
-	width:150px;
-	background:url(../images/big_head.jpg);
-	background-size: 150px 150px;
-	margin:12.5px;
-	top:12.5px;
-	-webkit-border-radius:75px;
-	-moz-border-radius:75px;
+	width:165px;
+	height:165px;
+	margin:5px;
+	border-radius: 82.5px;
+	-webkit-border-radius:82.5px;
+	-moz-border-radius:82.5px;
 }
 .username{
 	position: relative;
 	height:69px;
 	width:100%;
-	font-size: 33px;
+	font-size: 22px;
 	font-family: microsoft yahei;
 	text-align: center;
 	/* background: #333; */
@@ -68,6 +77,7 @@ body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,li{margin:0;}
 	float:right;
 	height:30px;
 	min-width: 30px;
+	text-align: center;
 	-webkit-border-radius:15px;
 	background:  rgb(45,44,62);
 	padding-left:15px;
