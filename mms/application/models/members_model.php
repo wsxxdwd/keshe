@@ -43,8 +43,10 @@
 		}
 
 		//获取所有成员
-		function fetchAll()
-		{
+		function fetchAll($r)
+		{	
+			
+			$this->db->select($r);
 			$query = $this->db->get('user');
 			if($row = $query->result_array())
 			{

@@ -25,9 +25,10 @@
 				$this->load->view('index',$data);
 			}
 			else
-			{*/
-				$data['row'] = $this->members_model->fetchAll();
+			{*/$r = 'userid,name,sex,avatar,groups,status';
+				$data['row'] = $this->members_model->fetchAll($r);
 				$this->load->view('user_info',$data);
+			
 			/*}*/
 
 		}
