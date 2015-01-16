@@ -30,13 +30,13 @@
 <body class="login">
 	<!-- BEGIN LOGO -->
 	<div class="logo">
-		<img src="media/image/logo-big.png" alt="" /> 
+		成员管理系统
 	</div>
 	<!-- END LOGO -->
 	<!-- BEGIN LOGIN -->
 	<div class="content">
 		<!-- BEGIN LOGIN FORM -->
-		<form class="form-vertical login-form" action="index.html">
+		<form class="form-vertical login-form" action="./index.php/admin/do_login" method="post">
 			<h3 class="form-title">登录管理后台</h3>
 			<div class="alert alert-error hide">
 				<button class="close" data-dismiss="alert"></button>
@@ -62,17 +62,12 @@
 				</div>
 			</div>
 			<div class="form-actions">
-				<label class="checkbox">
-				<input type="checkbox" name="remember" value="1"/> 记住我
-				</label>
 				<button type="submit" class="btn green pull-right">
 				登 录 <i class="m-icon-swapright m-icon-white"></i>
 				</button>            
 			</div>
 		</form>
-		<!-- END LOGIN FORM -->        
-		
-		
+		<!-- END LOGIN FORM -->
 	</div>
 	<!-- END LOGIN -->
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->

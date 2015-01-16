@@ -13,13 +13,14 @@
 			$arr['username'] = $post['username'];
 			$arr['password'] = md5($post['password']);
 			$query = $this->db->get_where('user',$arr);
+			
 			if($row = $query->row_array())
 			{
 				$data['userid'] = $row['userid'];
 				$data['name'] = $row['name'];
 				$data['groupid'] = $row['groups'];
 				$this->session->set_userdata($data);
-			/*	if($post['autoflag'])
+				/*if($post['autoflag'])
 				{
 					setcookie('userid',$data['userid'],time()+7*24*3600,'/');
 					setcookie('name',$data['name'],time()+7*24*3600,'/');
