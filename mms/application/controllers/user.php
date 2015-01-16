@@ -24,7 +24,7 @@
 			}
 			else
 			{
-				$this->load->view('login');
+				$this->load->view('index');
 			}
 
 		}
