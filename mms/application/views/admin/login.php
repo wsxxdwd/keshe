@@ -21,7 +21,7 @@
 	<link href="media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 	<!-- END GLOBAL MANDATORY STYLES -->
 	<!-- BEGIN PAGE LEVEL STYLES -->
-	<link href="media/css/login.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/login-admin.css" rel="stylesheet" type="text/css"/>
 	<!-- END PAGE LEVEL STYLES -->
 	<link rel="shortcut icon" href="media/image/favicon.ico" />
 </head>
