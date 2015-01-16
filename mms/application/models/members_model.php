@@ -52,6 +52,17 @@
 			} 
 			else return FALSE;
 		}
+		//获取某个成员信息
+		function get_one($userid)
+		{	
+			$query = $this->db->get_where('user',array('userid'=>$userid));
+			if($row = $query->row_array())
+			{
+				return $row;
+			}
+			else return FALSE;
+		}
+
 
 		//搜索一个成员
 		function fetchOne($post)

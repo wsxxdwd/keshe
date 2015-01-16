@@ -10,7 +10,7 @@
 		//发送留言
 		function send($post)
 		{
-			$data['s_id'] = $this->session->userdata('userid');
+			//$data['s_id'] = $this->session->userdata('userid');
 			$data['m_id'] = $post['m_id'];
 			$data['content'] = $post['content'];
 			$data['new'] = 1 ;

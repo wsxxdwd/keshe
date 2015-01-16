@@ -19,12 +19,12 @@
 				$data['name'] = $row['name'];
 				$data['groupid'] = $row['groups'];
 				$this->session->set_userdata($data);
-				if($post['autoflag'])
+			/*	if($post['autoflag'])
 				{
 					setcookie('userid',$data['userid'],time()+7*24*3600,'/');
 					setcookie('name',$data['name'],time()+7*24*3600,'/');
 					setcookie('security',$row['security'],time()+7*24*3600,'/');
-				}
+				}*/
 				return TRUE;
 			}
 			else
@@ -36,14 +36,14 @@
 		function logout()
 		{
 			$data = array('userid'=>'','name'=>'','groupid'=>'');
-			setcookie('userid','',time()-7*24*3600,'/');
+		/*	setcookie('userid','',time()-7*24*3600,'/');
 			setcookie('name','',time()-7*24*3600,'/');
-			setcookie('security','',time()-7*24*3500,'/');
+			setcookie('security','',time()-7*24*3500,'/');*/
 			$this->session->unset_userdata($data);
 			return TRUE;
 		}
 		//自动登录获取session
-		function getsession()
+	/*	function getsession()
 		{
 			$data['userid'] = $_COOKIE['userid'];
 			$data['name'] = $_COOKIE['name'];
@@ -56,5 +56,5 @@
 				return TRUE;
 			}
 			return FALSE;
-		}
+		}*/
 	}

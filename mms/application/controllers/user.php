@@ -6,11 +6,13 @@
 			parent::__construct();
 			$this->load->helper(array('url','form'));
 			$this->load->model('user_model');
+			$this->load->model('members_model');
+			$this->load->database();
 		}
 		//默认加载
 		function index()
 		{	
-			$session = $this->session->all_userdata();
+			/*$session = $this->session->all_userdata();
 
 			if(isset($session['userid']))
 			{
@@ -23,12 +25,37 @@
 				$this->load->view('index',$data);
 			}
 			else
-			{
-				$this->load->view('login');
-			}
+			{*/
+				$data['row'] = $this->members_model->fetchAll();
+				$this->load->view('user_info',$data);
+			/*}*/
 
 		}
+
+		function detail_info($keyid)
+		{	
+			if(!is_int($keyid))
+			{
+				$keyid = 1;
+			} 
+			$session = $this->session->all_userdata();
+			if(isset($session['userid']) && $keyid == $session['userid'])
+			{
+				$data['session'] = $session;
+				$this->load->view('profile',$data);
+			}
+			else
+			{	
+				$data['row'] = $this->memebers_model->get_one($keyid);
+				$this->load->view('profile',$data);
+			}
+		}
+
 		//登录
+		function login()
+		{
+			$this->load->view('login');
+		}
 		/*
 		*传入post参数 1 username
 		*参数2 password
@@ -37,6 +64,7 @@
 		function do_login()
 		{
 			$post = $this->input->post();	
+
 			if($post['username']=='' OR $post['password']=='')
 			{
 				$res['status'] = 0;
@@ -52,7 +80,6 @@
 				$res['status'] = 0;
 				$res['msg'] ='登陆失败';
 			}
-
 			echo json_encode($res);
 		}
 		//注销
