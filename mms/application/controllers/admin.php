@@ -50,6 +50,22 @@
 			}
 		}
 
+		function admin_msg()
+		{
+			$session = $this->session->all_userdata();
+			if(isset($session['userid']) && $session['groupid']==1)
+			{
+				$data['session'] = $session;
+				$data['msgs'] = $this->message_model->view_all_m();
+				//$data['new_num'] = $this->message_model->count_new();
+				$this->load->view('admin_msg',$data);
+			}
+			else
+			{
+				$this->load->view('admin_login');
+			}
+		}
+
 
 		/*
 		*传入post参数 1 username
