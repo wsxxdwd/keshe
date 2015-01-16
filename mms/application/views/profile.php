@@ -18,28 +18,22 @@
 	<div id="container">
 		<div class="header">
 			<div class="search">
-				<div class="content">
-					<i class="fa fa-search">
-						::before
-					</i>
-					<input type="text" placeholder="Search">
-				</div>
 			</div>
 			<div class="info">
-				<div class="head"></div>
+				<img class="head" src="./public/images/avatar/avatar.jpg"></img>
 				<div class="username">
-					<div class="wel">welcome</div>
-					<div class="name">wsxxdwd</div>
+					<div class="name">王迪</div>
+					<div class="description">凡人皆有一死</div>
 				</div>
 			</div>
 		</div>
 		<div id="nav">
 			<div class="sidebar">
-				<div class="nav_cell dashboard">Dashboard</div>
-				<div class="nav_cell messages">Messages</div>
-				<div class="nav_cell profile">Profile</div>
-				<div class="nav_cell friends">Friends</div>
-				<div class="nav_cell settings">Settings</div>
+				<div class="nav_cell active">详细信息</div>
+				<div class="nav_cell">个人简介</div>
+				<div class="nav_cell">作品介绍</div>
+				<div class="nav_cell">给他留言</div>
+				<div class="nav_cell">设置</div>
 			</div>
 		</div>
 	</div>
