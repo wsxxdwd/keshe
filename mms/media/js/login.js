@@ -45,21 +45,21 @@ var Login = function () {
 
 	            errorPlacement: function (error, element) {
 	                error.addClass('help-small no-left-padding').insertAfter(element.closest('.input-icon'));
-	            },
+	            }/*,
 
 	            submitHandler: function (form) {
-	                console.log(username);
-	            }
+	                return;
+	            }*/
 	        });
 
-	        $('.login-form input').keypress(function (e) {
+	        /*$('.login-form input').keypress(function (e) {
 	            if (e.which == 13) {
 	                if ($('.login-form').validate().form()) {
 	                    //window.location.href = "index.html";
 	                }
 	                return false;
 	            }
-	        });
+	        });*/
 	    }
     }
 
