@@ -5,7 +5,7 @@
 		{
 			parent::__construct();
 			$this->load->database();
-			$this->loda->library('session');
+			$this->load->library('session');
 		}
 		//发送留言
 		function send($post)

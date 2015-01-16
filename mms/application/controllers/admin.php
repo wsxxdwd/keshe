@@ -8,6 +8,7 @@
 			$this->load->model('admin_model');
 			$this->load->model('user_model');
 			$this->load->model('members_model');
+			$this->load->model('message_model');
 
 		}
 
@@ -20,7 +21,7 @@
 		function index()
 		{
 			$session = $this->session->all_userdata();
-			if(isset($session['userid']) && $session['groups']==1)
+			if(isset($session['userid']) && $session['groupid']==1)
 			{
 				$data['session'] = $session;
 				$data['mem_num'] = count($this->members_model->fetchAll());
@@ -36,7 +37,7 @@
 		function admin_info()
 		{
 			$session = $this->session->all_userdata();
-			if(isset($session['userid']) && $session['groups']==1)
+			if(isset($session['userid']) && $session['groupid']==1)
 			{
 				$data['session'] = $session;
 				$data['mem'] = $this->members_model->fetchAll();
@@ -47,7 +48,6 @@
 			{
 				$this->load->view('admin_login');
 			}
-
 		}
 
 
@@ -68,7 +68,7 @@
 			}
 			else if($this->admin_model->login($post))
 			{	
-				$this->index();			
+				header('LOCATION:index');	
 			}
 			else
 			{
