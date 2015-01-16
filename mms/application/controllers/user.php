@@ -32,7 +32,7 @@
 
 		}
 
-		function detail_info($keyid)
+		function detail_info($keyid=1)
 		{	
 			if(!is_int($keyid))
 			{
@@ -46,7 +46,7 @@
 			}
 			else
 			{	
-				$data['row'] = $this->memebers_model->get_one($keyid);
+				$data['row'] = $this->members_model->get_one($keyid);
 				$this->load->view('profile',$data);
 			}
 		}

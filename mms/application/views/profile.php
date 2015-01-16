@@ -7,7 +7,7 @@
 <link href="./public/css/profile.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="./public/css/font-awesome.min.css">
 <link rel="stylesheet" href="./public/css/font-awesome.css">
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+<script src="./public/js/jquery-min.js">
 </script>
 <script src="./public/js/profile.js" ></script>
 </head>
