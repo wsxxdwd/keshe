@@ -43,7 +43,7 @@
 		}
 
 		//获取所有成员
-		function fetchAll($r)
+		function fetchAll($r='*')
 		{	
 			
 			$this->db->select($r);

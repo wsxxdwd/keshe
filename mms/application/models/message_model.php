@@ -27,7 +27,7 @@
 		//查看新留言
 		function count_new()
 		{
-			$data['m_id'] = $this->session->userdata['userid'];
+			//$data['m_id'] = $this->session->userdata['userid'];
 			$data['new'] = 1;
 			$this->db->from('message');
 			$this->db->where($data);

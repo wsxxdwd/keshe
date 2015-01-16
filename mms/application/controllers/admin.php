@@ -11,11 +11,46 @@
 
 		}
 
-		function login()
+	/*	function login()
 		{
 			$this->load->view('admin_login');
-		}
+		}*/
 		
+
+		function index()
+		{
+			$session = $this->session->all_userdata();
+			if(isset($session['userid']) && $session['groups']==1)
+			{
+				$data['session'] = $session;
+				$data['mem_num'] = count($this->members_model->fetchAll());
+				$data['new_num'] = $this->message_model->count_new();
+				$this->load->view('admin_index',$data);
+			}
+			else
+			{
+				$this->load->view('admin_login');
+			}
+		}
+
+		function admin_info()
+		{
+			$session = $this->session->all_userdata();
+			if(isset($session['userid']) && $session['groups']==1)
+			{
+				$data['session'] = $session;
+				$data['mem'] = $this->members_model->fetchAll();
+				//$data['new_num'] = $this->message_model->count_new();
+				$this->load->view('admin_info',$data);
+			}
+			else
+			{
+				$this->load->view('admin_login');
+			}
+
+		}
+
+
 		/*
 		*传入post参数 1 username
 		*参数2 password
@@ -32,9 +67,8 @@
 				$this->load->view('admin_login',$res);
 			}
 			else if($this->admin_model->login($post))
-			{
-				$data['session'] = $this->session->all_userdata();
-				$this->load->view('admin_index',$data);
+			{	
+				$this->index();			
 			}
 			else
 			{
@@ -42,5 +76,6 @@
 				$res['msg'] ='登陆失败';
 				$this->load->view('admin_login',$res);
 			}
+		
 		}
 	}
