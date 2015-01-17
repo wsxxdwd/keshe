@@ -164,6 +164,7 @@
 	请求post数据：
 
 		*userid : 用户id 
+		
 	返回值
 		$result['status'] = 1;
 		$result['msg'] = '更新成功'

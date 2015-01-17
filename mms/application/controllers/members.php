@@ -76,7 +76,7 @@
 			}
 			else
 			{
-				$res['data'] = $this->members_model->get_one($get['userid'])
+				$res['data'] = $this->members_model->get_one($get['userid']);
 				if($res['data'])
 				{
 					$res['status']=1;
@@ -126,8 +126,8 @@
 		{
 			$session = $this->session->all_userdata();
 			$post = $this->input->post();
-			if(isset($session['userid']) && $session['userid']==$post['userid'] OR $session['groupid']==1)
-			{
+			if(isset($session['userid']) && ($session['userid']==$post['userid'] OR $session['groupid']==1))
+			{	
 				if($this->members_model->update($post))
 				{
 					$res['status'] = 1;
@@ -138,6 +138,7 @@
 					$res['status'] = 0;
 					$res['msg'] ='修改失败';
 				}
+				//$this->members_model->update($post);
 			}
 			else
 			{
