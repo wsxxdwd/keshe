@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	if(isset($session)){
+	if(isset($row)){
 		$user = $row;
 		$userid = $user["userid"];
 		$name = $user["name"];
@@ -37,6 +37,8 @@
 	}
 	if(isset($session) && $session["userid"] == $userid){
 		$login = true;
+	}else{
+		$login = false;
 	}
 ?>
 <html>

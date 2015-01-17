@@ -64,14 +64,14 @@
                                             <th>ID</th>
                                             <th>用户名</th>
                                             <th>名字</th>
-                                            <th>性别</th>
+                                            <th>性别(1:男,0:女)</th>
                                             <th>邮箱</th>
-                                            <th>分组</th>
+                                            <th>分组(1:管,2:后,3:前,4:设,5:产)</th>
                                             <th>motto</th>
                                             <th>描述</th>
                                             <th>联系电话</th>
                                             <th>qq</th>
-                                            <th>状态</th>
+                                            <th>状态(1:在团队,2:已毕业,3:离开)</th>
                                             <th class="sorting_disabled">编辑</th>
                                             <th class="sorting_disabled">删除</th>
                                         </tr>
@@ -83,33 +83,14 @@
                                             $username = $user["username"];
                                             $name = $user["name"];
                                             $motto = $user["motto"];
-                                            $sex = $user["sex"]?"男":"女";
+                                            $sex = $user["sex"];
                                             $description = $user["description"];
                                             $avatar = $user["avatar"];
                                             $qq = $user["qq"];
                                             $phone = $user["phone"];
                                             $email = $user["email"];
-                                            switch ($user["groups"]) {
-                                                case 1:
-                                                    $group =  "厂长";
-                                                    break;
-                                                case 2:
-                                                    $group =  "后台组";
-                                                    break;
-                                                default:
-                                                    $group =  "未知";
-                                                    break;
-                                            }
-                                            switch ($user["status"]) {
-                                                case '1':
-                                                    $status =  "团队中";
-                                                    break;
-                                                case '2':
-                                                    $status = "已毕业";
-                                                    break;
-                                                default:
-                                                    $status = "离开";
-                                            }
+                                            $group = $user["groups"];
+                                            $status = $user["status"];
                                             echo "<tr class=''>
                                                 <td>$userid</td>
                                                 <td>$username</td>

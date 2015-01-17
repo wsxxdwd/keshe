@@ -99,6 +99,8 @@ var TableEditable = function () {
 
             $('#sample_editable_1_new').click(function (e) {
                 e.preventDefault();
+                if (nEditing !== null)
+                    restoreRow(oTable, nEditing);
                 var aiNew = oTable.fnAddData(['', '', '', '','','','','','','','',
                         '<a class="edit" href="">Edit</a>', '<a class="cancel" data-mode="new" href="">Cancel</a>'
                 ]);
@@ -119,7 +121,7 @@ var TableEditable = function () {
                     type: "post",
                     url:  "./index.php/members/delete_members",
                     data: {
-                        userid : 1000
+                        userid : Number(userid)
                     },
                     dataType:"json",
                     success:
@@ -170,10 +172,11 @@ var TableEditable = function () {
                        motto : $(table_vals[6]).html(),
                        description : $(table_vals[7]).html(),
                        phone : $(table_vals[8]).html(),
-                       qq : $(table_vals[9]).html(),
+                       qq : $(table_vals[9]).html()*1,
                        status : $(table_vals[10]).html(),
                     }
-                    if(userid.html() >= 0){
+                    console.log(userid.html())
+                    if(userid.html() != ""){
                         data.userid = userid.html();
                         $.ajax({
                             type: "post",
@@ -191,6 +194,8 @@ var TableEditable = function () {
                             }
                         });
                     }else{
+                        var str=prompt("请设置初始密码");
+                        data.password = str;
                         $.ajax({
                             type: "post",
                             url:  "./index.php/members/add_members",

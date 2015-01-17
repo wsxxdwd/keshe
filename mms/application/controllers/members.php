@@ -13,10 +13,10 @@
 		{
 			$post = $this->input->post();
 			$session = $this->session->all_userdata();
-			if(!isset($session['userid']) OR ($session['gourpid'] !=1))
+			if(!isset($session['userid']) OR ($session['groupid'] !=1))
 			{
 				$result['status'] = 0;
-				$result['msg'] = '您不知管理员，无法进行操作';
+				$result['msg'] = '您不是管理员，无法进行操作';
 			}
 			else if(!$post['username'] OR !$post['password'] OR !$post['name'] OR !$post['groups'] OR !$post['sex'])
 			{
@@ -28,7 +28,7 @@
 				$result['status'] = 0;
 				$result['msg'] = '请输入正确的手机号';
 			}
-			else if($post['qq'] && !is_long($post['qq']) OR strlen(strval($post['qq']))>11)
+			else if($post['qq'] && strlen(strval($post['qq']))>11)
 			{
 				$result['status'] = 0;
 				$result['msg'] = '请输入正确的qq号';
@@ -98,15 +98,10 @@
 		{
 			$post = $this->input->post();
 			$session = $this->session->all_userdata();
-			if(!isset($session['userid']) OR ($session['gourpid'] !=1))
+			if(!isset($session['userid']) OR ($session['groupid'] !=1))
 			{
 				$result['status'] = 0;
-				$result['msg'] = '您不知管理员，无法进行操作';
-			}
-			else if(!is_int($post['userid']))
-			{
-				$result['status'] = 0;
-				$result['msg'] = '删除失败';
+				$result['msg'] = '您不是管理员，无法进行操作';
 			}
 			else if($this->members_model->delete($post))
 			{
