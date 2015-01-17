@@ -46,22 +46,51 @@
 			echo json_encode($result);
 		}
 
+		//管理员获取所有成员信息
 		function get_all_members()
 		{
 			$session = $this->load->all_userdata();
 			if(isset($session['userid']) && $session['groupid']==1)
 			{
-				$res = $this->members_model->fetchAll();
+				$res['data'] = $this->members_model->fetchAll();
+				$res['status']=1;
+				$res['msg'] = 'success';
+
+			}
+			else
+			{
+				$res['status'] = 0;
+				$res['msg'] = '查询失败';
 			}
 			echo json_encode($res);
 		}
 
-/*
+		//获取单一个人信息
 		function get_one()
 		{
-			$ses
+			$get = $this->input->get();
+			if(!isset($get['userid']) OR !is_int($get['userid']))
+			{
+				$res['status'] = 0;
+				$res['msg'] = '查询失败';
+			}
+			else
+			{
+				$res['data'] = $this->members_model->get_one($get['userid'])
+				if($res['data'])
+				{
+					$res['status']=1;
+					$res['msg'] = 'success';
+				}
+				else
+				{
+					$res['status'] = 0;
+					$res['msg'] = '查询失败';
+				}
+			}
+			echo json_encode($res);
 		}
-*/
+
 
 		
 		//删除成员

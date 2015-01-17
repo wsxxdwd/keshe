@@ -184,3 +184,32 @@
 	返回值
 		$res['status'] = 1;
 		$res['msg'] = '上传成功';
+
+
+
+16 管理员获取所有用户信息
+	
+	api: ./members/get_all_members
+
+	json
+
+	返回值
+		$res['data'] : 所有用户信息
+		$result['status'] = 1;
+		$result['msg'] = '成功'
+
+
+17 获取单一用户信息
+	
+	api: ./memebers/get_one
+
+	json
+
+	请求 get 数据
+
+		userid : 用户id
+
+	返回值
+		$res['data'] : 该用户信息
+		$result['status'] = 1;
+		$result['msg'] = '成功'
