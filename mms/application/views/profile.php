@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <?php print_r($row);?>
 <html>
@@ -17,6 +18,7 @@
 
 <body>
 <div id="background">
+	<?php print_r($row)?>
 	<div id="container">
 		<div class="header">
 			<a class="back" href="./index.php/user">返回</a>

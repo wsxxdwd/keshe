@@ -48,6 +48,7 @@
 			else
 			{	
 				$data['row'] = $this->members_model->get_one($keyid);
+				//print_r($data['row']);
 				$this->load->view('profile',$data);
 			}
 		}
