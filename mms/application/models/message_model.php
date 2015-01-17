@@ -1,11 +1,13 @@
 <?php 	
+	session_start();
+
 	class Message_Model extends CI_Model
 	{
 		function __construct()
 		{
 			parent::__construct();
 			$this->load->database();
-			$this->loda->library('session');
+			$this->load->library('session');
 		}
 		//发送留言
 		function send($post)
@@ -27,16 +29,16 @@
 		//查看新留言
 		function count_new()
 		{
-			$data['m_id'] = $this->session->userdata['userid'];
+			//$data['m_id'] = $this->session->userdata['userid'];
 			$data['new'] = 1;
 			$this->db->from('message');
 			$this->db->where($data);
 			return $this->db->count_all_results();	
 		}
 		//查看某用户的所有留言
-		function view_all($power)
+		function view_all($post)
 		{	
-			$data['m_id'] = $this->session->userdata['userid'];
+			$data['m_id'] = $post['userid'];
 			$this->db->from('message');
 			$this->db->where($data);
 			$this->db->order_by('time','DESC');
@@ -52,12 +54,19 @@
 		}
 
 		function d_msg($post)
-		{
-			$data['msgid'] = $post['msgid'];
-			if($this->db->delete('message',$data))
-				return TRUE;
-			else
+		{	
+			if(!$post['msgid'] OR !is_int($post['msgid']))
+			{
 				return FALSE;
+			}
+			else
+			{	
+				$this->db->where('msg',$post['msgid']);
+				if($this->db->delete('message'))
+					return TRUE;
+				else
+					return FALSE;
+			}																				
 		}
 
 		//查看自己对他人的留言
@@ -82,5 +91,13 @@
 				return TRUE;
 			}
 			return FALSE;
+		}
+
+
+		function show_verify()
+		{	
+			$conf['name'] = 'captchaCode';
+			$this->load->library('captcha',$conf);
+			$this->captcha->show();
 		}
 	}

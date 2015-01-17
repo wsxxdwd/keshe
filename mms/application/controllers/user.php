@@ -25,7 +25,7 @@
 				$this->load->view('index',$data);
 			}
 			else
-			{*/$r = 'userid,name,sex,avatar,groups,status';
+			{*/	$r = 'userid,name,sex,avatar,groups,status';
 				$data['row'] = $this->members_model->fetchAll($r);
 				$this->load->view('user_info',$data);
 			
@@ -54,8 +54,16 @@
 
 		//登录
 		function login()
-		{
-			$this->load->view('login');
+		{	
+			$session = $this->session->all_userdata();
+			if(isset($session['userid']))
+			{
+				header('LOCATION:index');
+			}
+			else
+			{
+				$this->load->view('login');
+			}
 		}
 		/*
 		*传入post参数 1 username
@@ -88,8 +96,15 @@
 		function do_logout()
 		{
 			if($this->user_model->logout())
-				echo '1';
+			{
+				$res['status'] = 1;
+				$res['msg'] = '注销成功';
+			}
 			else 
-				echo '0';
+			{
+				$res['status'] = 0;
+				$res['msg'] = '注销失败';
+			}
+			echo json_encode($res);
 		}
 	}

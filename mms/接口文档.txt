@@ -1,0 +1,186 @@
+注释：加 * 为必须值
+
+1、管理员查看所有成员路由
+	
+	url: ./admin/admin_info
+
+2、管理员查看所有留言路由
+	url: ./admin/admin_msg
+
+3、管理员注销接口
+	api: ./admin/do_logout
+	
+	json格式
+
+	返回示例
+
+		res['status'] = 1;
+		$res['msg'] = '注销成功';
+
+4、用户注销接口
+	api: ./user/do_logout
+	
+	json格式
+
+	返回示例
+
+		$res['status'] = 1;
+		$res['msg'] = '注销成功';
+
+
+5、发送留言接口
+	api: ./message/send_message
+
+	json
+
+	请求post数据：
+	
+		* captchacode : 验证码；
+
+		* content ：留言内容；
+
+		* m_id : 被留言人id
+	
+		  s_email ：发送者邮箱；
+	  
+
+	返回成功示例
+
+		$res['status'] = 1;
+		$res['msg'] = '留言成功';
+
+
+6 验证码路由 
+
+	验证图片 width 100px height 30px
+
+	url: ./message/show_captcha
+
+
+7 查看某位成员的留言
+	api: ./message/view_all_msg
+
+	请求post数据 : 
+	
+		* userid ：该用户id
+	
+	返回成功数据 ：
+		$res['data'] ： 返回的该用户的留言信息
+		$res['status'] = 1;	
+		$res['msg'] = 'success';
+
+8 管理员查看所有新留言数目
+	api： ./message/new_msg_num
+
+	json
+
+	返回成功数据 ：
+	
+		$res['status'] = 1;
+		$res['msg'] = '成功';
+		$res['data'] : 返回数目
+
+
+9 管理员查看所有留言信息
+	api : ./message/m_view_all
+	
+	json
+
+	返回数据:
+		$res['data'] :所有留言信息
+		$res['status'] = 1;
+		$res['msg'] = 'success';
+
+10 删除留言
+	api : ./message/delete_msg
+	
+	json
+
+	请求post数据:
+	
+		* userid : 该条留言的拥有者、用来也session进行对比判断是否该用户操作
+		* msgid : 该条留言id	
+
+	返回示例：
+	
+		$res['status'] = 1;
+		$res['msg'] = '删除成功';
+
+
+11 标记为已读
+	api : ./message/already_read
+
+	json
+
+	请求post数据:
+	
+		* msgid : 该条留言id
+
+
+	返回示例
+		
+		$res['status'] = 1;
+		$res['msg'] = '标记成功';
+
+
+12 管理员添加新成员
+	api : ./members/add_members
+
+	json
+	
+	请求post数据：
+		*username;
+		*password;
+		*name;
+		*groups;
+		*sex;
+		 phone;
+		 qq;
+
+	返回示例
+		
+		$res['status'] = 1;
+		$res['msg'] = '添加成功 ';
+
+13 管理员删除成员
+
+	api : ./members/delete_members
+	
+	json
+
+	请求post数据：
+
+		*userid :用户id
+	返回值
+		$result['status'] = 1;
+		$result['msg'] = '删除成功';
+
+
+14更新成员信息
+	api ： ./members/update_members
+
+	json
+
+	请求post数据：
+
+		*userid : 用户id 
+	返回值
+		$result['status'] = 1;
+		$result['msg'] = '更新成功'
+	
+		
+15 上传头像
+	
+	api : ./members/upload_avatar
+		
+	json
+	
+	上传域属性 name = 'userfile'
+
+	上传格式规定 png|gif|jpeg|jpg
+
+	上传大小规定 100k
+
+	返回值
+		$res['status'] = 1;
+		$res['msg'] = '上传成功';
