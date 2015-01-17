@@ -133,7 +133,6 @@
 					$res['status'] = 0;
 					$res['msg'] ='修改失败';
 				}
-				//$this->members_model->update($post);
 			}
 			else
 			{

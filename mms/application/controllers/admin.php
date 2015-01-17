@@ -67,20 +67,15 @@
 		}
 
 
-		/*
-		*传入post参数 1 username
-		*参数2 password
-		*参数3 autoflag 自动登录
-		*/
+	
 		function do_login()
 		{
 			$post = $this->input->post();	
-			/*$res = $this->user_model->login($post);
-			echo $res;*/
+		
 			if($post['username']=='' OR $post['password']=='')
 			{
 				$res['msg'] = '请输入完整的用户名和密码';
-				$this->load->view('admin_login',$res);
+			
 			}
 			else if($this->admin_model->login($post))
 			{	
@@ -90,17 +85,15 @@
 			{
 				
 				$res['msg'] ='登陆失败';
-				$this->load->view('admin_login',$res);
 			}
-		
+			echo $res['msg'];
 		}
 
 		function do_logout()
 		{
 			if($this->user_model->logout())
 			{
-				$res['status'] = 1;
-				$res['msg'] = '注销成功';
+				header('LOCATION:index');	
 			}
 			else 
 			{

@@ -7,6 +7,7 @@
 			$this->load->helper(array('url','form'));
 			$this->load->model('user_model');
 			$this->load->model('members_model');
+			$this->load->model('message_model');
 			$this->load->database();
 		}
 		//默认加载
@@ -44,6 +45,7 @@
 			{
 				$data['session'] = $session;
 				$data['row'] = $this->members_model->get_one($keyid);
+				$data['msg'] = $this->message_model->view_all($session);
 				$this->load->view('profile',$data);
 			}
 			else
@@ -99,8 +101,7 @@
 		{
 			if($this->user_model->logout())
 			{
-				$res['status'] = 1;
-				$res['msg'] = '注销成功';
+				header('LOCATION:index');	
 			}
 			else 
 			{
