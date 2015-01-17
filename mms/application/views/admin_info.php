@@ -61,12 +61,15 @@
                                 <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                     <thead>
                                         <tr>
-                                            <th>Username</th>
-                                            <th>Full Name</th>
-                                            <th>Points</th>
-                                            <th>Notes</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
+                                            <th>用户名</th>
+                                            <th>名字</th>
+                                            <th>性别</th>
+                                            <th>邮箱</th>
+                                            <th>分组</th>
+                                            <th>描述</th>
+                                            <th>联系电话</th>
+                                            <th>qq</th>
+                                            <th>状态</th>
                                         </tr>
                                     </thead>
                                     <tbody>

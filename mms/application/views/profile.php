@@ -1,21 +1,22 @@
 <!DOCTYPE html>
+<?php print_r($row);?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<base href = "<?php echo base_url();?>"/> 
-<link href="./public/css/profile.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="./public/css/font-awesome.min.css">
-<link rel="stylesheet" href="./public/css/font-awesome.css">
-<script src="./public/js/jquery-min.js">
-</script>
-<script src="./public/js/profile.js" ></script>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<base href = "<?php echo base_url();?>"/> 
+	<link href="./public/css/profile.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="./public/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./public/css/font-awesome.css">
+	<script src="./public/js/jquery-min.js">
+	</script>
+	<script src="./public/js/profile.js" ></script>
 </head>
 
 
 <body>
 <div id="background">
-	<?php print_r($row);?>
 	<div id="container">
 		<div class="header">
 			<a class="back" href="./index.php/user">返回</a>

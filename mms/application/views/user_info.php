@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<base href = "<?php echo base_url();?>"/> 
-<link href="./public/css/user_info.css" rel="stylesheet" type="text/css" />
-<link href="./public/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<script src="./public/js/jquery-min.js">
-</script>
-<script src="./public/js/user_info.js" ></script>
+	<title>成员管理系统</title>
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<base href = "<?php echo base_url();?>"/> 
+	<link href="./public/css/user_info.css" rel="stylesheet" type="text/css" />
+	<link href="./public/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<script src="./public/js/jquery-min.js">
+	</script>
+	<script src="./public/js/user_info.js" ></script>
 </head>
 <body>
 	<?php
