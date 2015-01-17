@@ -92,54 +92,21 @@
 				</ul>
 			</div>
 			<div class="tab" id="description">
-				<ul>
-					<li><span>性别:</span> <?php echo $name;?></li>
-					<li><span>组别:</span> <?php echo $group;?></li>
-					<li><span>邮箱地址:</span> <?php echo $email;?></li>
-					<li><span>联系电话:</span> <?php echo $phone;?></li>
-					<li><span>qq:</span> <?php echo $qq;?></li>
-					<li><span>目前状态:</span> <?php echo $status;?></li>
-				</ul>
+				<h1></h1>
+				<p><?php echo $description;?></p>
 			</div>
 			<div class="tab" id="achievment">
-				<ul>
-					<li><span>性别:</span> <?php echo $name;?></li>
-					<li><span>组别:</span> <?php echo $group;?></li>
-					<li><span>邮箱地址:</span> <?php echo $email;?></li>
-					<li><span>联系电话:</span> <?php echo $phone;?></li>
-					<li><span>qq:</span> <?php echo $qq;?></li>
-					<li><span>目前状态:</span> <?php echo $status;?></li>
-				</ul>
+				暂无信息
 			</div>
 			<div class="tab" id="message">
-				<ul>
-					<li><span>性别:</span> <?php echo $name;?></li>
-					<li><span>组别:</span> <?php echo $group;?></li>
-					<li><span>邮箱地址:</span> <?php echo $email;?></li>
-					<li><span>联系电话:</span> <?php echo $phone;?></li>
-					<li><span>qq:</span> <?php echo $qq;?></li>
-					<li><span>目前状态:</span> <?php echo $status;?></li>
-				</ul>
+				<input type="text" placeholder="您的联系邮箱">
+				<textarea></textarea>
 			</div>
 			<div class="tab" id="check_message">
-				<ul>
-					<li><span>性别:</span> <?php echo $name;?></li>
-					<li><span>组别:</span> <?php echo $group;?></li>
-					<li><span>邮箱地址:</span> <?php echo $email;?></li>
-					<li><span>联系电话:</span> <?php echo $phone;?></li>
-					<li><span>qq:</span> <?php echo $qq;?></li>
-					<li><span>目前状态:</span> <?php echo $status;?></li>
-				</ul>
+				留言:
 			</div>
 			<div class="tab" id="setting">
-				<ul>
-					<li><span>性别:</span> <?php echo $name;?></li>
-					<li><span>组别:</span> <?php echo $group;?></li>
-					<li><span>邮箱地址:</span> <?php echo $email;?></li>
-					<li><span>联系电话:</span> <?php echo $phone;?></li>
-					<li><span>qq:</span> <?php echo $qq;?></li>
-					<li><span>目前状态:</span> <?php echo $status;?></li>
-				</ul>
+				<a href="./index.php/user/do_logout">退出登录</a>
 			</div>
 		</div>
 	</div>

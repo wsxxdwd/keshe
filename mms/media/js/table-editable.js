@@ -113,10 +113,25 @@ var TableEditable = function () {
                 if (confirm("确定删除这条记录?") == false) {
                     return;
                 }
-
                 var nRow = $(this).parents('tr')[0];
-                oTable.fnDeleteRow(nRow);
-                alert("删除成功");
+                var userid = $($(nRow).find("td")[0]).html();
+                $.ajax({
+                    type: "post",
+                    url:  "./index.php/members/delete_members",
+                    data: {
+                        userid : 1000
+                    },
+                    dataType:"json",
+                    success:
+                    function(res){
+                        if(res.status == 0){
+                            alert(res.msg);
+                        }else{
+                            oTable.fnDeleteRow(nRow);
+                            alert("删除成功");
+                        }
+                    }
+                });
             });
 
             $('#sample_editable_1 a.cancel').live('click', function (e) {
@@ -151,7 +166,7 @@ var TableEditable = function () {
                        name : $(table_vals[2]).html(),
                        sex : $(table_vals[3]).html(),
                        email : $(table_vals[4]).html(),
-                       group : $(table_vals[5]).html(),
+                       groups : $(table_vals[5]).html(),
                        motto : $(table_vals[6]).html(),
                        description : $(table_vals[7]).html(),
                        phone : $(table_vals[8]).html(),
