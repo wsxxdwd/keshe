@@ -12,7 +12,13 @@
 		function add_members()
 		{
 			$post = $this->input->post();
-			if(!$post['username'] OR !$post['password'] OR !$post['name'] OR !$post['groups'])
+			$session = $this->session->all_userdata();
+			if(!isset($session['userid']) OR ($session['gourpid'] !=1))
+			{
+				$result['status'] = 0;
+				$result['msg'] = '您不知管理员，无法进行操作';
+			}
+			else if(!$post['username'] OR !$post['password'] OR !$post['name'] OR !$post['groups'] OR !$post['sex'])
 			{
 				$result['status'] = 0;
 				$result['msg'] = '请填写完整的成员信息';
@@ -45,7 +51,13 @@
 		function delete_members()
 		{
 			$post = $this->input->post();
-			if(!is_int($post['userid']))
+			$session = $this->session->all_userdata();
+			if(!isset($session['userid']) OR ($session['gourpid'] !=1))
+			{
+				$result['status'] = 0;
+				$result['msg'] = '您不知管理员，无法进行操作';
+			}
+			else if(!is_int($post['userid']))
 			{
 				$result['status'] = 0;
 				$result['msg'] = '删除失败';
@@ -68,7 +80,7 @@
 		{
 			$session = $this->session->all_userdata();
 			$post = $this->input->post();
-			if($session['userid']==$post['userid'] OR $session['groupid']==1)
+			if(isset($session['userid']) && $session['userid']==$post['userid'] OR $session['groupid']==1)
 			{
 				if($this->members_model->update($post))
 				{
@@ -86,6 +98,7 @@
 				$res['status'] = 0;
 				$res['msg'] = '您无权进行此操作';
 			}
+			echo json_encode($res);
 		}
 		
 
@@ -98,7 +111,6 @@
 			{
 				 mkdir($path, 0777);
 			}
-
 			$config['upload_path'] =$path.'/';
 			$config['allowed_types'] = 'png|gif|jpeg|jpg';
 			$config['max_size'] = '100';

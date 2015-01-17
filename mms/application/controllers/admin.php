@@ -94,4 +94,19 @@
 			}
 		
 		}
+
+		function do_logout()
+		{
+			if($this->user_model->logout())
+			{
+				$res['status'] = 1;
+				$res['msg'] = '注销成功';
+			}
+			else 
+			{
+				$res['status'] = 0;
+				$res['msg'] = '注销失败';
+			}
+			echo json_encode($res);
+		}
 	}

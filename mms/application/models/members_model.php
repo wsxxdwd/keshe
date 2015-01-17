@@ -35,7 +35,11 @@
 		{	
 			if($post['password'])
 				$post['password'] = md5($post['password']);
-			if($this->db->update('user',$post,array('userid'=>$post['userid'])))
+			if(!$post['userid'])
+			{
+				return FALSE;
+			}
+			else if($this->db->update('user',$post,array('userid'=>$post['userid'])))
 			{
 				return TURE;
 			}
