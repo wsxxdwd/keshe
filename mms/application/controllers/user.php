@@ -36,10 +36,8 @@
 
 		function detail_info($keyid=1)
 		{	
-			if(!is_int($keyid))
-			{
-				$keyid = 1;
-			} 
+			
+
 			$session = $this->session->all_userdata()	;
 			if(isset($session['userid']) && $keyid == $session['userid'])
 			{
