@@ -46,7 +46,24 @@
 			echo json_encode($result);
 		}
 
+		function get_all_members()
+		{
+			$session = $this->load->all_userdata();
+			if(isset($session['userid']) && $session['groupid']==1)
+			{
+				$res = $this->members_model->fetchAll();
+			}
+			echo json_encode($res);
+		}
 
+/*
+		function get_one()
+		{
+			$ses
+		}
+*/
+
+		
 		//删除成员
 		function delete_members()
 		{

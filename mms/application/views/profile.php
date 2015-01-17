@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +16,7 @@
 
 <body>
 <div id="background">
+	<?php print_r($row)?>
 	<div id="container">
 		<div class="header">
 			<div class="search">
