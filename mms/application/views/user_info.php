@@ -16,6 +16,7 @@
 		foreach ($row as $user) {
 			$id = $user['userid'];
 			$name = $user['name'];
+			$avatar = $user["avatar"];
 			switch ($user["groups"]) {
 				case 1:
 					$group =  "厂长";
@@ -24,7 +25,7 @@
 					$group =  "后台组";
 					break;
 				default:
-					$group =  "位置";
+					$group =  "未知";
 					break;
 			}
 			switch ($user["sex"]) {
@@ -50,7 +51,7 @@
 			echo "<a class='box' href='./index.php/user/detail_info/$id'>
 				<div class='top'>
 					<div class='border'>
-						<img class='head' src='./public/images/avatar/avatar.jpg'></img>
+						<img class='head' src='./public/images/avatar/$avatar.jpg'></img>
 					</div>
 					<div class='username'>$name</div>
 				</div>

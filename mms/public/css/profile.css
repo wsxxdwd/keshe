@@ -28,7 +28,6 @@ html,body{
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	font-size: 0;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 .header{
@@ -125,23 +124,29 @@ html,body{
 #nav .nav_cell:hover{
 	background-color: #db7c59;
 }
-/* .dashboard{
-	top: 60px;
-} */
-/* .fa-search:before{
-	content: "\f002";
-} */
-/* .left{
-	position: relative;
-	display: inline-block;
-	width:200px;
-	height:100%;
-	background: #123;
+#content{
+	margin-left: 200px;
+	width: auto;
+	height: 540px;
 }
-.right{
-	position: relative;
+.tab{
+	position: absolute;
+	display: none;
+	margin:20px 5%;
+	width: 90%;
+	height: 90%;
+	color: #fff;
+}
+.show{
+	display: block;
+}
+ul{
+	list-style: none;
+}
+li{
+	line-height:40px;
+}
+li span{
 	display: inline-block;
-	height:100%;
-	width:auto;
-	background: #321;
-} */
+	width:100px;
+}

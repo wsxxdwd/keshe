@@ -43,6 +43,7 @@
 			if(isset($session['userid']) && $keyid == $session['userid'])
 			{
 				$data['session'] = $session;
+				$data['row'] = $this->members_model->get_one($keyid);
 				$this->load->view('profile',$data);
 			}
 			else
