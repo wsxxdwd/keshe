@@ -160,7 +160,23 @@ var TableEditable = function () {
                     }
                     if(userid.html() >= 0){
                         data.userid = userid.html();
-                         $.ajax({
+                        $.ajax({
+                            type: "post",
+                            url:  "./index.php/members/update_members",
+                            data: data,
+                            dataType:"json",
+                            success:
+                            function(res){
+                                if(res.status == 0){
+                                    alert(res.msg);
+                                }else{
+                                    nEditing = null;
+                                    alert("更新成功");
+                                }
+                            }
+                        });
+                    }else{
+                        $.ajax({
                             type: "post",
                             url:  "./index.php/members/add_members",
                             data: data,
@@ -170,9 +186,9 @@ var TableEditable = function () {
                                 if(res.status == 0){
                                     alert(res.msg);
                                 }else{
+                                    userid.html(res.newid);
                                     nEditing = null;
-                                    userid.html(res.newid)
-                                    alert("更新成功");
+                                    alert("新增成功");
                                 }
                             }
                         });
