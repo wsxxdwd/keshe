@@ -31,6 +31,7 @@
             <!-- BEGIN PAGE CONTAINER-->        
             <div class="container-fluid">
                 <!-- BEGIN PAGE CONTENT-->
+                <a href="./index.php/admin/do_logout" class="btn red" style="float:right;margin-bottom:10px;">登出</a>
                 <div class="row-fluid">
                     <div class="span12">
                         <!-- BEGIN EXAMPLE TABLE PORTLET-->

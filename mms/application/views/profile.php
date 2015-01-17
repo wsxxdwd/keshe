@@ -50,7 +50,7 @@
 	<link href="./public/css/profile.css" rel="stylesheet" type="text/css" />
 	<script src="./public/js/jquery-min.js">
 	</script>
-	
+
 	<script>
 		var userid = <?php echo $userid;?>;
 	</script>
@@ -105,8 +105,9 @@
 				暂无信息
 			</div>
 			<div class="tab" id="message">
-				<input type="text" placeholder="您的联系邮箱">
-				<textarea></textarea>
+				<p>留言暂未开启</p>
+				<!-- <input type="text" placeholder="您的联系邮箱">
+				<textarea></textarea> -->
 			</div>
 			<div class="tab" id="check_message">
 				留言:

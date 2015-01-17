@@ -35,6 +35,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 		<div class="page-content">
 			<!-- BEGIN PAGE CONTAINER-->
 			<div class="container-fluid">
+		<a href="./index.php/admin/do_logout" class="btn red" style="margin-bottom:10px;">登出</a>
 				
 				<div id="dashboard">
 					<!-- BEGIN DASHBOARD STATS -->
