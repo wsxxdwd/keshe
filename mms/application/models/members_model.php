@@ -15,7 +15,7 @@
 			$post['security'] = md5(time().$post['username'].mt_rand(10001,99999));
 			if($this->db->insert('user',$post))
 			{
-				return TRUE;
+				return $this->db->insert_id();
 			}
 			else return FALSE;
 		}

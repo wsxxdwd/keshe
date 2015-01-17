@@ -33,8 +33,8 @@
 				$result['status'] = 0;
 				$result['msg'] = '请输入正确的qq号';
 			}
-			else if($this->members_model->add($post))
-			{
+			else if($result['newid'] = $this->members_model->add($post))
+			{	
 				$result['status'] = 1;
 				$result['msg'] = '添加成员成功';
 			}
