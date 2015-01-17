@@ -33,7 +33,7 @@
 		//更新成员信息
 		function update($post)
 		{	
-			if($post['password'])
+			if(isset($post['password']))
 				$post['password'] = md5($post['password']);
 			if(!$post['userid'])
 			{
