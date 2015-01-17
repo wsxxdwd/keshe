@@ -52,75 +52,81 @@
                                         <button class="btn dropdown-toggle" data-toggle="dropdown">选项 <i class="icon-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu pull-right">
-                                            <li><a href="#">打印</a></li>
-                                            <li><a href="#">保存为PDF</a></li>
-                                            <li><a href="#">导出为Excel</a></li>
+                                            <li><a>打印</a></li>
+                                            <li><a>保存为PDF</a></li>
+                                            <li><a>导出为Excel</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                     <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>用户名</th>
                                             <th>名字</th>
                                             <th>性别</th>
                                             <th>邮箱</th>
                                             <th>分组</th>
+                                            <th>motto</th>
                                             <th>描述</th>
                                             <th>联系电话</th>
                                             <th>qq</th>
                                             <th>状态</th>
+                                            <th class="sorting_disabled">编辑</th>
+                                            <th class="sorting_disabled">删除</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="">
-                                            <td>alex</td>
-                                            <td>Alex Nilson</td>
-                                            <td>1234</td>
-                                            <td class="center">power user</td>
-                                            <td><a class="edit" href="javascript:;">Edit</a></td>
-                                            <td><a class="delete" href="javascript:;">Delete</a></td>
-                                        </tr>
-                                        <tr class="">
-                                            <td>lisa</td>
-                                            <td>Lisa Wong</td>
-                                            <td>434</td>
-                                            <td class="center">new user</td>
-                                            <td><a class="edit" href="javascript:;">Edit</a></td>
-                                            <td><a class="delete" href="javascript:;">Delete</a></td>
-                                        </tr>
-                                        <tr class="">
-                                            <td>nick12</td>
-                                            <td>Nick Roberts</td>
-                                            <td>232</td>
-                                            <td class="center">power user</td>
-                                            <td><a class="edit" href="javascript:;">Edit</a></td>
-                                            <td><a class="delete" href="javascript:;">Delete</a></td>
-                                        </tr>
-                                        <tr class="">
-                                            <td>goldweb</td>
-                                            <td>Sergio Jackson</td>
-                                            <td>132</td>
-                                            <td class="center">elite user</td>
-                                            <td><a class="edit" href="javascript:;">Edit</a></td>
-                                            <td><a class="delete" href="javascript:;">Delete</a></td>
-                                        </tr>
-                                        <tr class="">
-                                            <td>webriver</td>
-                                            <td>Antonio Sanches</td>
-                                            <td>462</td>
-                                            <td class="center">new user</td>
-                                            <td><a class="edit" href="javascript:;">Edit</a></td>
-                                            <td><a class="delete" href="javascript:;">Delete</a></td>
-                                        </tr>
-                                        <tr class="">
-                                            <td>gist124</td>
-                                            <td>Nick Roberts</td>
-                                            <td>62</td>
-                                            <td class="center">new user</td>
-                                            <td><a class="edit" href="javascript:;">Edit</a></td>
-                                            <td><a class="delete" href="javascript:;">Delete</a></td>
-                                        </tr>
+                                    <?php
+                                        foreach ($mem as $user) {
+                                            $userid = $user["userid"];
+                                            $username = $user["username"];
+                                            $name = $user["name"];
+                                            $motto = $user["motto"];
+                                            $sex = $user["sex"]?"男":"女";
+                                            $description = $user["description"];
+                                            $avatar = $user["avatar"];
+                                            $qq = $user["qq"];
+                                            $phone = $user["phone"];
+                                            $email = $user["email"];
+                                            switch ($user["groups"]) {
+                                                case 1:
+                                                    $group =  "厂长";
+                                                    break;
+                                                case 2:
+                                                    $group =  "后台组";
+                                                    break;
+                                                default:
+                                                    $group =  "未知";
+                                                    break;
+                                            }
+                                            switch ($user["status"]) {
+                                                case '1':
+                                                    $status =  "团队中";
+                                                    break;
+                                                case '2':
+                                                    $status = "已毕业";
+                                                    break;
+                                                default:
+                                                    $status = "离开";
+                                            }
+                                            echo "<tr class=''>
+                                                <td>$userid</td>
+                                                <td>$username</td>
+                                                <td>$name</td>
+                                                <td>$sex</td>
+                                                <td>$email</td>
+                                                <td>$group</td>
+                                                <td>$description</td>
+                                                <td>$motto</td>
+                                                <td>$phone</td>
+                                                <td>$qq</td>
+                                                <td>$status</td>
+                                                <td><a class='edit' href='javascript:;'>Edit</a></td>
+                                                <td><a class='delete' href='javascript:;'>Delete</a></td>
+                                            </tr>";
+                                        }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
