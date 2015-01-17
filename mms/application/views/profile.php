@@ -50,6 +50,10 @@
 	<link href="./public/css/profile.css" rel="stylesheet" type="text/css" />
 	<script src="./public/js/jquery-min.js">
 	</script>
+	
+	<script>
+		var userid = <?php echo $userid;?>;
+	</script>
 	<script src="./public/js/profile.js" ></script>
 </head>
 
@@ -108,7 +112,33 @@
 				留言:
 			</div>
 			<div class="tab" id="setting">
-				<a href="./index.php/user/do_logout">退出登录</a>
+				<a class="btn" href="./index.php/user/do_logout">退出登录</a>
+				<div class="form_control">
+					<label for="c_name">姓名</label><input type="text" id="c_name" value="<?php echo $name;?>"/>
+				</div>
+				<div class="form_control">
+					<label for="c_motto">motto</label><input type="text" id="c_motto" value="<?php echo $motto;?>"/>
+				</div>
+				<div class="form_control">
+					<label for="c_sex">性别</label><input type="text" id="c_sex" value="<?php echo $sex;?>"/>
+				</div>
+				<div class="form_control">
+					<label for="c_email">邮箱</label><input type="text" id="c_email" value="<?php echo $email;?>"/>
+				</div>
+				<div class="form_control">
+					<label for="c_description">个人简介</label><input type="text" id="c_description" value="<?php echo $description;?>"/>
+				</div>
+				<div class="form_control">
+					<label for="c_qq">qq</label><input type="text" id="c_qq" value="<?php echo $qq;?>"/>
+				</div>
+				<div class="line"></div>
+				<div class="form_control">
+					<label for="c_password">密码</label><input type="password" id="c_password"/>
+				</div>
+				<div class="form_control">
+					<label for="c_password_confirm">确认密码</label><input type="password" id="c_password_confirm"/>
+				</div>
+				<div id="change_info" class="btn">确认修改</div>
 			</div>
 		</div>
 	</div>

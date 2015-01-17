@@ -33,7 +33,7 @@
 		//更新成员信息
 		function update($post)
 		{	
-			if($post['password'])
+			if(isset($post['password']))
 				$post['password'] = md5($post['password']);
 			if(!$post['userid'])
 			{
@@ -41,7 +41,7 @@
 			}
 			else if($this->db->update('user',$post,array('userid'=>$post['userid'])))
 			{
-				return TURE;
+				return TRUE;
 			}
 			else return FALSE;
 		}
