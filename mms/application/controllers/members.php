@@ -123,7 +123,12 @@
 			$post = $this->input->post();
 			if(isset($session['userid']) && ($session['userid']==$post['userid'] OR $session['groupid']==1))
 			{	
-				if($this->members_model->update($post))
+				if(isset($post['password']) && $post['password']=='')
+				{
+					$res['status'] = 0;
+					$res['msg'] ='密码不能为空';
+				}
+				else if($this->members_model->update($post))
 				{
 					$res['status'] = 1;
 					$res['msg'] = '修改成功';
@@ -133,7 +138,6 @@
 					$res['status'] = 0;
 					$res['msg'] ='修改失败';
 				}
-				//$this->members_model->update($post);
 			}
 			else
 			{
