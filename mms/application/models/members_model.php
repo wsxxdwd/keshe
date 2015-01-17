@@ -13,9 +13,9 @@
 		{	
 			$post['password'] = md5($post['password']);
 			$post['security'] = md5(time().$post['username'].mt_rand(10001,99999));
-			if($row = $this->db->insert('user',$post))
+			if($this->db->insert('user',$post))
 			{
-				return $row;
+				return $this->db->insert_id();
 			}
 			else return FALSE;
 		}
