@@ -27,11 +27,13 @@ html,body{
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 	font-family: 'Raleway', sans-serif;
 	width:200px;
+	text-decoration: none;
 }
 .top{
 	position: relative;
-	height:235px;
+	height:225px;
 	width:100%;
+	border-bottom: 1px solid rgba(255,255,255,0.5);
 }
 .border{
 	position: relative;
@@ -55,7 +57,7 @@ html,body{
 }
 .username{
 	position: relative;
-	height:69px;
+	height:59px;
 	width:100%;
 	font-size: 22px;
 	font-family: microsoft yahei;
@@ -64,12 +66,15 @@ html,body{
 }
 .info_cell{
 	overflow: hidden;
-	height:30px;
+	height:20px;
 	padding: 0.8em;
 	line-height: 30px;
 }
+.info_cell i{
+	margin-right: 10px;
+}
 .oval{
-	height:30px;
+	height:20px;
 	min-width: 30px;
 	padding-left:15px;
 	padding-right:15px;

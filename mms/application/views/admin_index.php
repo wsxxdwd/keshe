@@ -46,13 +46,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 								</div>
 								<div class="details">
 									<div class="number">
-										25个成员
+										<?php echo $mem_num;?>个成员
 									</div>
 									<div class="desc">                           
 										成员管理
 									</div>
 								</div>
-								<a class="more" href="#">
+								<a class="more" href="./index.php/admin/admin_info">
 								进入 <i class="m-icon-swapright m-icon-white"></i>
 								</a>                 
 							</div>
@@ -63,7 +63,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 									<i class="icon-comments"></i>
 								</div>
 								<div class="details">
-									<div class="number">549条留言</div>
+									<div class="number"><?php echo $new_num;?>新条留言</div>
 									<div class="desc">管理留言</div>
 								</div>
 								<a class="more" href="#">

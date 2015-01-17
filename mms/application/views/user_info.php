@@ -13,6 +13,7 @@
 <body>
 	<?php
 		foreach ($row as $user) {
+			$id = $user['userid'];
 			$name = $user['name'];
 			switch ($user["groups"]) {
 				case 1:
@@ -45,7 +46,7 @@
 				default:
 					$status = "离开";
 			}
-			echo "<div class='box'>
+			echo "<a class='box' href='./index.php/user/detail_info/$id'>
 				<div class='top'>
 					<div class='border'>
 						<img class='head' src='./public/images/avatar/avatar.jpg'></img>
@@ -53,16 +54,15 @@
 					<div class='username'>$name</div>
 				</div>
 				<div class='info_cell'>
-					<i class='icon-camera-retro icon-small'></i>
-					<div class='oval'>$group</div>
+					<div class='oval'><i class='icon-group'></i>$group</div>
 				</div>
 				<div class='info_cell'>
-					<div class='oval'>$sex</div>
+					<div class='oval'><i class='icon-off'></i>$sex</div>
 				</div>
 				<div class='info_cell'>
-					<div class='oval'>$status</div>
+					<div class='oval'><i class='icon-check'></i>$status</div>
 				</div>
-			</div>";
+			</a>";
 		}
 	?>
 

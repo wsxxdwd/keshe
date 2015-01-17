@@ -15,10 +15,10 @@
 
 <body>
 <div id="background">
+	<?php print_r($row);?>
 	<div id="container">
 		<div class="header">
-			<div class="search">
-			</div>
+			<a class="back" href="./index.php/user">返回</a>
 			<div class="info">
 				<img class="head" src="./public/images/avatar/avatar.jpg"></img>
 				<div class="username">
