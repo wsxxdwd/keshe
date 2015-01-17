@@ -39,7 +39,7 @@
 			{
 				$keyid = 1;
 			} 
-			$session = $this->session->all_userdata();
+			$session = $this->session->all_userdata()	;
 			if(isset($session['userid']) && $keyid == $session['userid'])
 			{
 				$data['session'] = $session;
@@ -48,8 +48,9 @@
 			}
 			else
 			{	
+				$data['flag'] = '0';
 				$data['row'] = $this->members_model->get_one($keyid);
-				//print_r($data['row']);
+				print_r($data['row']);
 				$this->load->view('profile',$data);
 			}
 		}
