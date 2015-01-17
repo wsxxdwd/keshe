@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <base href = "<?php echo base_url();?>"/> 
 <link href="./public/css/user_info.css" rel="stylesheet" type="text/css" />
+<link href="./public/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <script src="./public/js/jquery-min.js">
 </script>
 <script src="./public/js/user_info.js" ></script>
@@ -51,9 +52,16 @@
 					</div>
 					<div class='username'>$name</div>
 				</div>
-				<div class='info_cell'>组别:<div class='oval'>$group</div></div>
-				<div class='info_cell'>性别:<div class='oval'>$sex</div></div>
-				<div class='info_cell'>状态:<div class='oval'>$status</div></div>
+				<div class='info_cell'>
+					<i class='icon-camera-retro icon-small'></i>
+					<div class='oval'>$group</div>
+				</div>
+				<div class='info_cell'>
+					<div class='oval'>$sex</div>
+				</div>
+				<div class='info_cell'>
+					<div class='oval'>$status</div>
+				</div>
 			</div>";
 		}
 	?>
